@@ -1,0 +1,20 @@
+apiVersion: v1
+entries:
+  calendar-manager:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2026-04-28T21:34:21.082472126Z"
+    description: Helm chart for the calendar-manager event sync service
+    digest: c926b89a27cd2ac6012ce3cef334064bcf50c6fece97b70f97f88b3dd5bf3015
+    keywords:
+    - go
+    - calendar
+    - google-calendar
+    name: calendar-manager
+    sources:
+    - https://github.com/jo-hoe/calendar-manager
+    type: application
+    urls:
+    - https://github.com/jo-hoe/calendar-manager/releases/download/calendar-manager-0.1.0/calendar-manager-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-04-28T21:34:21.08248149Z"
