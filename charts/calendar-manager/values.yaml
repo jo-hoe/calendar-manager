@@ -1,0 +1,38 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/jo-hoe/calendar-manager
+  tag: ""
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: calendar-manager.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+config:
+  port: 8080
+  logLevel: "info"
+  calendar:
+    provider: "google"
+    calendarID: ""
+    icalURL: ""
+
+# Google service account credentials JSON (base64 encoded).
+# Generate with: cat credentials.json | base64 -w0
+googleCredentials: ""
+
+# Alternatively, reference an existing Kubernetes secret containing the credentials file.
+# The secret must have a key named "google-credentials.json".
+# If set, this takes precedence over googleCredentials.
+existingCredentialsSecret: ""

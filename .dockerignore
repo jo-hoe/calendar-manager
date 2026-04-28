@@ -1,0 +1,14 @@
+.git
+.github
+.githooks
+.vscode
+.idea
+.claude
+.playwright-mcp
+k3d
+charts
+*.log
+*.test
+*.out
+local.yaml
+credentials.json

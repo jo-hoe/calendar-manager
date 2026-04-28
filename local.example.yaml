@@ -1,0 +1,12 @@
+# local.example.yaml — local development configuration.
+# Copy to local.yaml and adjust as needed.
+
+port: 8080
+logLevel: "info"
+
+calendar:
+  provider: "google"
+  google:
+    credentialsFile: "./credentials.json"
+    calendarID: "your-calendar-id@group.calendar.google.com"
+  icalURL: "https://calendar.google.com/calendar/ical/your-calendar-id/basic.ics"

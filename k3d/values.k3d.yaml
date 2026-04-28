@@ -1,2 +1,25 @@
 # Local k3d development overrides
 
+image:
+  repository: registry.localhost:5000/calendar-manager
+  tag: latest
+  pullPolicy: Always
+
+config:
+  port: 8080
+  logLevel: "debug"
+  calendar:
+    provider: "google"
+    calendarID: ""
+    icalURL: ""
+
+googleCredentials: ""
+
+ingress:
+  enabled: true
+  className: traefik
+  hosts:
+    - host: localhost
+      paths:
+        - path: /
+          pathType: Prefix

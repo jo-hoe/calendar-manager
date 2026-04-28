@@ -1,0 +1,17 @@
+calendar-manager has been deployed.
+
+Access the service:
+{{- if .Values.ingress.enabled }}
+  {{- range .Values.ingress.hosts }}
+  http://{{ .host }}
+  {{- end }}
+{{- else }}
+  kubectl port-forward svc/{{ include "calendar-manager.fullname" . }} {{ .Values.service.port }}:{{ .Values.service.port }}
+  Then open: http://localhost:{{ .Values.service.port }}/probe
+{{- end }}
+
+API endpoints:
+  GET  /probe        - Health check
+  GET  /api/events   - List calendar events
+  POST /api/events   - Create or update an event
+  DELETE /api/events/{id} - Delete an event

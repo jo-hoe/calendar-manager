@@ -1,0 +1,25 @@
+services:
+  calendar-manager:
+    build:
+      context: .
+      target: dev
+    image: calendar-manager:latest
+    environment:
+      CONFIG_PATH: /local.yaml
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: bind
+        source: ./local.yaml
+        target: /local.yaml
+        read_only: true
+      - type: bind
+        source: ./credentials.json
+        target: /secrets/google-credentials.json
+        read_only: true
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/probe || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
