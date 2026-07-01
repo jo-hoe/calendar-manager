@@ -20,7 +20,7 @@ jobs:
       with:
         go-version: ${{ matrix.go-version }}
     - name: Checkout code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
     - name: Run tests with coverage
       if: matrix.platform == 'ubuntu-latest'
       run: go test -v ./... -covermode=count -coverprofile=coverage.out
