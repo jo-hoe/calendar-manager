@@ -3,7 +3,7 @@ module github.com/jo-hoe/calendar-manager
 go 1.26.2
 
 require (
-	github.com/arran4/golang-ical v0.3.6
+	github.com/arran4/golang-ical v0.3.8
 	golang.org/x/oauth2 v0.37.0
 	google.golang.org/api v0.310.0
 	gopkg.in/yaml.v3 v3.0.1
